@@ -1,0 +1,91 @@
+Prisma Object Relational Model (ORM)
+ Prisma refers to an open-source next-generation ORM (Object-Relational Mapping) tool that simplifies database access and management for developers. It acts as a bridge between your application and the database, allowing you to interact with the database using a type-safe and intuitive API.
+An ORM (Object-Relational Mapping) is a technique or a tool that allows developers to interact with a database using an object-oriented approach, rather than writing SQL queries.
+Some examples of ORMs include:
+SQLAlchemy (Python)
+Sequelize (JavaScript)
+Hibernate (Java)
+ Prisma
+Drizzle
+Benefits of using an ORM
+Productivity:  Reduces amount of boilerplate code for database interactions.
+Portability: Makes it easier to switch databases without signiificant code changes 
+Security: Helps prevent SQL injection by using parameterized queries.
+Maintainence: Simplifies the mainteinence of databases interactions and schema changes.
+ Steps to use Prisma
+ Install Prisma as dev dependency.
+   
+To install Prisma, run the following command:
+     
+
+
+Set Up prisma project by creating a schema file.
+  
+run the command below:
+ 
+
+Replace DATABASE with the database that you are using, assuming you are using postgresql:
+ 
+
+
+Creating your models(s).
+-  Models represent the different tables in your database.
+- Models are made up of fields (fields correspond to the columns in our database).
+
+Key Concepts Of  Prisma Models
+1. Data Models:  Define the tables and their collumns (fields) in your database.
+2. Fields Types: Specify the data for each field(eg String ,Int , Boolean, bytes, float, decimal).
+3. relations: Describe how models relate to each other using relations fields.
+4.  Attributes: Add aditional metadata to fields and models using attributes like @id, @default, @ relation @unique, @map, @relation.
+Run migrations to reflect changes in your databases.
+ 
+- In Prisma, migrations are a way to manage and apply changes to your database in a controlled and consistent way.
+
+- Whenever you make modifications to your Prisma schema (schema.prisma), such as adding, removing, or altering fields or models, you create a new migration to reflect those changes in your actual database.
+
+- To run a migration, execute the following command 
+
+for example: 
+ 
+Generate the client and use it in your project.
+
+PRISMA CLIENT
+The Prisma Client is an auto-generated and type-safe database client that you use to interact with your database in a Node.js or TypeScript application. It’s generated based on the models you define in your Prisma schema (schema.prisma) and provides a simple, intuitive, and type-safe API for CRUD operations, filtering, pagination, and more.
+To generate a client, we use the command:
+    
+If it is not already installed, run the command:
+   
+
+CREATE READ UPDATE DELETE (CRUD)
+1.CREATING
+-  single record -  create()
+ - multiple recording - createMany()
+
+2. READ
+-  Get all : FindMany()
+- Find the first record :  findFirst() and apply the filter usin Where
+Comparison operators in prisma
+Equals: matches eactly e.g {age: {rquals:25}}
+not: matches 'not equal to specified value e.g {age: { not:25} }
+lt: less than eg { age{lt: 25}}
+lte: less that or equal to eg {age :{lte :16}}
+gt: greater than eg {age : { gt 24})}
+gte: greater than or equal to eg { age: { gte: 19}}
+
+String filters
+equals: matches exactly
+contains: matches if the string contains the specified substring 
+startsWith: matches if the string starts with the specified string
+endsWith: matches if the string ends with the specified string
+
+3. UPDATE
+- Update a single record - update()
+- Update multiple records using - updateMany()
+
+4. DELETE
+- Delete  single record - delete ()
+- Delete multiple records  - deleteMany()
+
+
+
+
