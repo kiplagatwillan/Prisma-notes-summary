@@ -86,6 +86,21 @@ endsWith: matches if the string ends with the specified string
 - Delete  single record - delete ()
 - Delete multiple records  - deleteMany()
 
+Relationships
+Relationships define how different models (tables) in a database are connected to each other.
+Prisma uses a schema to define these relationships making it easier to work with relational databases.
+types of relationships
+one-to-one relationship (1-1): means that one record in a table is associated to only one record in another table.
+
+ 
+one-to-many relationship (1-n): means that one record in a table can be associated with multiple other records in another table.
+ 
+
+many-to-many relationship (m-n): means that multiple records in one table can be associated to multiple records in another table.
+ 
+
+
+
 
 
 
